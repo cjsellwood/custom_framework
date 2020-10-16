@@ -313,6 +313,11 @@ table {
     display: flex;
   }
 }
+a {
+  color: black;
+  text-decoration: none;
+}
+
 .center-self {
   margin: 0 auto;
 }
