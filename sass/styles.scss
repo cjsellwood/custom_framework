@@ -1,0 +1,103 @@
+@use 'reset';
+
+* {
+  box-sizing: border-box;
+}
+
+.grid-12 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
+@for $i from 1 through 12 {
+  .width-#{$i} {
+    width: calc(100% / 12 * #{$i});
+    min-width: calc(100% / 12 * #{$i});
+    display: flex;
+  }
+}
+
+@for $i from 1 through 5 {
+  .gutter-#{$i * 10} {
+    padding-left: 5px * $i;
+    padding-right: 5px * $i;
+  }
+}
+
+@media (max-width: 768px) {
+  @for $i from 1 through 12 {
+    .m-width-#{$i} {
+      width: calc(100% / 12 * #{$i});
+      min-width: calc(100% / 12 * #{$i});
+      display: flex;
+    }
+  }
+}
+
+.center-self {
+  margin: 0 auto;
+}
+
+.justify-content-start {
+  justify-content: start;
+}
+
+.justify-content-end {
+  justify-content: end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/*Testing */
+.grid-12 {
+  outline: 1px solid red;
+  height: 90vh;
+  width: 90vw;
+  background-color: rgb(255, 199, 192);
+}
+
+.row {
+  outline: 1px solid green;
+}
+
+@for $i from 1 through 12 {
+  .width-#{$i} {
+    outline: 1px solid blue;
+    background-color: powderblue;
+  }
+}
